@@ -4,7 +4,7 @@ version=3.17.3
 revision=1
 build_style=meson
 configure_args="--sbindir=bin -Db_lto=false -Dexamples=false -Duseroot=false
- -Dtests=false"
+ -Dtests=false --default-library both"
 hostmakedepends="pkg-config"
 makedepends="eudev-libudev-devel"
 short_desc="Filesystem in Userspace 3.x"
@@ -30,5 +30,6 @@ fuse3-devel_package() {
 		vmove usr/include
 		vmove usr/lib/pkgconfig
 		vmove "usr/lib/*.so"
+		vmove "usr/lib/*.a"
 	}
 }
